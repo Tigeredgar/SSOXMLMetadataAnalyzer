@@ -1,0 +1,167 @@
+body {
+  font-family: 'Rubik', sans-serif;
+  margin: 0;
+  padding: 0;
+}
+
+:root {
+  --primary-color: #2C3E50;
+  --secondary-color: #ECF0F1;
+  --accent-color: #0084ff;
+}
+
+.App {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  height: 100vh;
+  justify-content: center;
+  background-color: var(--secondary-color);
+}
+
+.dropzone {
+  width: 300px;
+  height: 200px;
+  border: 2px dashed var(--primary-color);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transition: all 0.3s;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+}
+
+.dropzone:hover {
+  border-color: var(--accent-color);
+  box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+}
+
+.results {
+  margin-top: 20px;
+  background-color: #fff;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+  overflow-x: auto;
+  word-wrap: break-word;
+  overflow-wrap: break-word;
+}
+
+.dropzone-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  border-radius: 20px;
+  padding: 20px;
+  background-color: #fff;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+}
+
+.file-input {
+  cursor: pointer;
+  margin-top: 1rem;
+  text-align: center;
+}
+
+button {
+  border-radius: 20px;
+  padding: 10px 20px;
+  cursor: pointer;
+  font-size: 15px;
+  background-color: var(--primary-color);
+  border: none;
+  color: #fff;
+  font-weight: 600;
+  transition: all 0.3s;
+}
+
+button:hover {
+  background-color: var(--accent-color);
+}
+
+button:focus {
+  outline: none;
+  box-shadow: 0 0 5px var(--accent-color);
+}
+
+.results button:not(:last-child) {
+  margin-right: 10px;
+}
+
+.results p {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;  /* align the text and the copy button vertically */
+  padding: 10px 0;
+  border-bottom: 1px solid #e1e1e1;
+}
+.results p b {
+  margin-right: 10px;  /* add space to the right of the bold labels */
+}
+.results p span {
+  padding-right: 10px;  /* add space to the right of the result text */
+}
+
+textarea {
+  width: 100%;
+  height: 200px;
+  resize: none;
+  border-radius: 10px;
+  padding: 10px;
+}
+
+h1 {
+  margin: 0;
+  padding-bottom: 20px;
+}
+
+@media only screen and (max-width: 600px) {
+  .dropzone, .results, .dropzone-container {
+    width: 90%;
+  }
+  .results button:not(:last-child) {
+    margin-bottom: 10px;
+  }
+}
+
+
+@media only screen and (min-width: 601px) and (max-width: 900px) {
+  .dropzone, .results, .dropzone-container {
+    width: 80%;
+  }
+}
+.copy-button {
+  background: none;
+  border: none;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  color: var(--primary-color);
+  padding-left: 0;
+  padding-right: 0;
+}
+
+.copy-button:hover {
+  color: var(--accent-color);
+}
+
+.copy-button svg {
+  margin-right: 5px;
+}
+@keyframes clickFeedback {
+  0% { transform: scale(1); }
+  50% { transform: scale(0.9); }
+  100% { transform: scale(1); }
+}
+
+.copy-button:active,
+button:active {
+  animation: clickFeedback 0.3s ease-in-out;
+}
+
+/* Adjusting hover styles for the copy button */
+.copy-button:hover {
+  background-color: var(--accent-color);
+  color: var(--primary-color); /* Keeping the text color consistent */
+}
+
